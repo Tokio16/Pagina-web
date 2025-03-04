@@ -1,7 +1,33 @@
-.Titulo{
- color: rgba(71, 112, 112, 0.623);
+.kodak{
+   color: rgb(251, 255, 0);
 }
-.Hipervinculo{
-   color: rgb(0, 255, 13); 
+.year1892 {
+   background-color: rgb(9, 9, 240);
+   color:rgb(255, 255, 255);
+}
+.cienaños{
+   background-color: rgb(9, 9, 240);
+   color:rgb(255, 255, 255);   
 }
 
+.camaras{
+   color: rgb(130, 0, 252);
+}
+
+.impresion{
+   color: rgb(132, 0, 255);
+}
+
+.fotografia{
+   color: rgb(132, 0, 255);
+}
+
+.year2020{
+   background-color: rgb(9, 9, 240);
+   color: rgb(255, 255, 255);
+}
+
+.farmaceuticos{
+   background-color: rgb(0, 128, 0);
+   color: rgb(255, 255, 255);
+}
