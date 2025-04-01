@@ -1,0 +1,33 @@
+(function(its123) {
+    its123.getJob = function(element, language, jobtitle)
+    {
+
+    fetch("https://www.123test.eu/gateway/talent_com/index_api.php?k=" + jobtitle + "&language=" + language + "&chnl1=report" + "&chnl2=careertest")
+        .then(function(response) {
+            return response.text()
+        })
+        .then(function(html) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, "text/html");
+            console.log(doc);
+
+            document.getElementById(element).innerHTML = doc.getElementById('jobsearch').innerHTML;
+        
+        })
+        .catch(function(err) {  
+            console.log('Failed to fetch page: ', err);  
+        });
+    }
+    its123.talentAds = function() {
+        const jobadds = document.querySelectorAll('.job-ad-placeholder');
+        jobadds.forEach(jobadd => {
+            console.log(jobadd.id);
+            console.log(jobadd.dataset.jobtitle);
+            console.log(jobadd.dataset.lang);
+
+            its123.getJob(jobadd.id, jobadd.dataset.lang, jobadd.dataset.jobtitle);
+        });
+    };
+
+
+})( window.its123 = window.its123 || {});

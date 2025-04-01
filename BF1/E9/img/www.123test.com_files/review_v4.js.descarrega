@@ -1,0 +1,43 @@
+
+function send123testFeedback() {
+    var questionType = 'yes';
+    var formFeedback = 'formPositive';
+    if ($('#q1-no:visible').length === 1) {
+        questionType = 'no';
+        formFeedback = 'formNegative';
+    }
+
+    if ($('#actionPositive:visible').length === 1) {
+        questionType = 'yes!';
+    }
+
+    if($('#review_has_product_category').val() == 'enabled' && $('#metaPageInfoProductID').val() != 'NOTSET' && ['REVIEWPRODUCT', 'REVIEWPRODUCT_QUOTE'].indexOf($('#metaPageAddThisType').val()) != -1)
+    {
+        $('#reviewExternalUrl').val($('#reviewExternalUrl').val() + 'product?external_id=' + $('#metaPageInfoProductID').val());
+    }
+
+    $.ajax({
+        type: 'GET',
+        url: '/review-test/standard/',
+        data: $('#' + formFeedback).serialize() + '&parX=qwenAbasd',
+        complete: function (e, xhr, settings) {
+            if (e.status === 200) {
+
+                RenderHeader123test(window.location.pathname, 'review_success_' + formFeedback);
+
+                $('.review-block-footer').hide();
+                $('#reviewMessageBox').removeClass('hide');
+                $('#reviewMessageBox').show();
+                $('.its123ReviewBtn').hide();
+                its123ScrollToSelector('#reviewMessageBox');
+            } else {
+                RenderHeader123test(window.location.pathname, 'review_error_' + formFeedback);
+                $('.review-block-footer').hide();
+                $('#reviewMessageBoxError').removeClass('hide');
+                its123ScrollToSelector('#reviewMessageBoxError');
+
+            }
+        }
+    });
+}
+

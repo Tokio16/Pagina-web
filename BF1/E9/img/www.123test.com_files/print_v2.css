@@ -1,0 +1,139 @@
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .main-wrapper {
+        padding-top: 0 !important;
+    }
+    * {
+        text-shadow: none !important;
+        color: #000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    .breadcrumb, .navbar, .badge, #its123-mobile-header, .inline-icons-container, #body-header-prefix
+    {
+        display: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    #banner{
+        display:none;
+    }
+
+    .binnentabel table{
+        border: 1px solid #e6e6dc;
+    }
+
+    body{
+        margin: 25mm 15mm 25mm 15mm;
+    }
+
+    body.boxed{
+        padding-top: inherit;
+    }
+
+    h1{
+        font-size: 2.0em;
+    }
+
+    h2{
+        font-size: 1.4em;
+    }
+
+    h3{
+        font-size: 1.0em;
+    }
+
+    p,
+    td{
+        font-size: 12px;
+    }
+
+    section.page-top{
+        display:none;
+    }
+
+    .reportbuttons{ /* pdf download buttons in extended reports */
+        display:none;
+    }
+
+    .factor .bar{ /* for personality test report progress bars */
+        background-color: #DB7B03 !important;
+
+        -webkit-print-color-adjust: exact;
+    }
+    .facet .bar{ /* for personality test report progress bars */
+        background-color: #0182A9 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Remove displaying of href for links, overrides html5 boilerplate */
+    a[href]:after {
+        content: "";
+    }
+
+    #123testlogofull {
+        display: none;
+    }
+    .inline-icons-container
+    {
+        display: none;
+    }
+
+}
